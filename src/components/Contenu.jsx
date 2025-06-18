@@ -22,8 +22,9 @@ export default function Contenu () {
                         <h3>{pizzaData.name}</h3>
                         <p>{pizzaData.description}</p>
                     </div>
-                    <div>
+                    <div className="cardEnd">
                         <p>à partir de <span>€{pizzaData.price}</span> </p>
+                        <button className="btnAdd">+</button>
                     </div>
 
                     {/* </div> */}
