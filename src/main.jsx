@@ -4,11 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-
+import { BrowserRouter } from 'react-router'
+BrowserRouter
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    {/* <Provider store={store}> */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    {/* </Provider> */}
   </StrictMode>,
 )
