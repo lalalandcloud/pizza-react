@@ -7,3 +7,11 @@
 .cardLink{
     width: 25%;
 }
+.btnAdd{
+    background-color: #c8102e;
+    color: white;
+    border: none;
+}
+.cardEnd{
+    display: flex;
+}
