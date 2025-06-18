@@ -1,0 +1,9 @@
+.contenuA{
+    display: flex;
+    width: 80vw;    
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cardLink{
+    width: 25%;
+}
