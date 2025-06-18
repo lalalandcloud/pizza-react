@@ -1,0 +1,17 @@
+.contenuA{
+    display: flex;
+    width: 80vw;    
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cardLink{
+    width: 25%;
+}
+.btnAdd{
+    background-color: #c8102e;
+    color: white;
+    border: none;
+}
+.cardEnd{
+    display: flex;
+}

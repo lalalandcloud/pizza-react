@@ -8,6 +8,14 @@ nav {
     padding-right: 40px;
     color: white;
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+    position: fixed;
+}
+
+@media (min-width: 1024px) {
+    nav {
+        padding-left: 160px;
+        padding-right: 160px;
+    }
 }
 
 @media (min-width: 1024px) {
