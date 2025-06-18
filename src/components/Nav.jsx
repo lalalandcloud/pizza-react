@@ -1,14 +1,21 @@
 import './nav.css'
+import logo from '../assets/img/ph-logo-white.webp'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function Nav() {
 
     return(
         <>
         <nav>
-            <p>logo</p>
-            <div className="d-flex">
-                <button>Se connecter</button>
-                <div>FR</div>
+            <img src={logo} alt="" />
+            <div className="d-flex align-items-center gap-3">
+                <div className="d-flex align-items-center h-100">
+                    <button>Se connecter</button>
+                </div>
+                <div className="d-flex h-100 align-items-center">
+                    FR&nbsp;<FontAwesomeIcon icon={faAngleDown} />
+                </div>
             </div>
         </nav>
         </>
