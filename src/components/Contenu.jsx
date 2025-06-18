@@ -8,6 +8,9 @@ export default function Contenu () {
     return(
 
         <div className="contenuA">
+            <div className="contenuTitle">
+                <h3>Pizzas</h3>
+            </div>
             {pizzaData.map((pizzaData) => (
                 <div 
                     key={pizzaData.name} 
