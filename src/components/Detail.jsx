@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './Detail.css'
 import pizzaData from '../../pizzas.json'
+import { useSelector } from 'react-redux'
+import { useState } from 'react'
+
 
 export default function Detail(){
 
+    const [open, setOpen] = useState(false)
+    const {name} = useParams()
     const pizza = pizzaData.find(pizza => pizza.name === name)
+    const ingredients = useSelector(state => state.ingredients)
 
     return(
 
@@ -15,21 +21,25 @@ export default function Detail(){
             >
                 <p>Retour</p>
             </Link>
+                <div className='dropdown'>
 
-            {pizza &&
+                    <button onClick={() => setOpen(!open)}>
+                        Ingrédients
+                    </button>
 
-                <div>
-                    <img src={pizza.image} alt="" />
-                </div>
-                <div>
-                    <h2>{pizza.name}</h2>
-                    <p>{pizza.description}</p>
+                    {open &&(
+                        <div className='dropdown-content'>
+                            {ingredients && ingredients.map((ingredient) => (
 
+                                <div key={ingredient} className='dropdown-item'>
+                                    {ingredient}
+                                </div>
+                            ))}
+                        </div>
                     
+                    )}
                 </div>
-            
-            
-            }
+
         </div>    
 
 
