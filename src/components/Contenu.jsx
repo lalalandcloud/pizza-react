@@ -23,14 +23,15 @@ export default function Contenu () {
                         <div className="cardImg">
                             <img src={pizzaData.image} alt="" />
                         </div>
-                        <div>
-                            <h3>{pizzaData.name}</h3>
+                        <div className="p-2">
+                            <h3 className="m-0">{pizzaData.name}</h3>
                             {/* <p>{pizzaData.description}</p> */}
                         </div>
                         <div className="cardEnd">
-                            <p>à partir de <span>€{pizzaData.price}</span> </p>
-                            <button className="btnAdd" onClick={() => dispatch(addPizza(pizzaData))}>+</button>
-                            {/* <button className="btnAdd">+</button> */}
+                            <p className="p-2 m-0">à partir de <span>€{pizzaData.price}</span> </p>
+                            <div>
+                                <button className="btnAdd" onClick={() => dispatch(addPizza(pizzaData))}>+</button>
+                            </div>
                         </div>
 
                         {/* </div> */}
