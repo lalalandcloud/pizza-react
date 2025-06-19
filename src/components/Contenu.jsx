@@ -4,9 +4,6 @@ import './contenu.css'
 
 
 export default function Contenu () {
-    const {id} = useParams()
-
-
 
     return(
 
@@ -33,7 +30,7 @@ export default function Contenu () {
                         <p>à partir de <span>€{pizzaData.price}</span> </p>
                         <button className="btnAdd">+</button>
                     </div>  
-                                  
+
                 </Link>
 
             ))}
