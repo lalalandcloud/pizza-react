@@ -16,6 +16,7 @@
 .cart-bis {
     overflow-y: scroll;
     scrollbar-width: none;
+    background-color: white;
 }
 
 .total {

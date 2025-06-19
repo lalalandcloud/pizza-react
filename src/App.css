@@ -12,6 +12,7 @@ body {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    background-color: #f5f7f9 !important;
 }
 
 p, h1, h2, h3, a, button {
