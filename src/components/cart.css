@@ -1,6 +1,6 @@
 .cart {
-    height: 400px;
-    width: 250px;
+    height: 440px;
+    width: 260px;
     /* border: 1px solid black; */
     position: fixed;
     right: 10px;
@@ -9,8 +9,6 @@
 .panier {
     height: 90%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-bottom-left-radius: 5px;     
-    border-bottom-right-radius: 5px;
 }
 
 .commander {
@@ -18,12 +16,16 @@
     border-radius: 8px;
     border: none;
     color: white;
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 300;
 }
 
 .commander:disabled {
     background-color: #c6db99;
+}
+
+.commander:disabled .quantite {
+    background-color: #a8c46c;
 }
 
 .cart-bis {
@@ -32,8 +34,22 @@
     background: white;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    height: 340px;
+
 }
 
 .total {
     background: #f5f7f9;
+    border-bottom-left-radius: 5px;     
+    border-bottom-right-radius: 5px;
+}
+
+.quantite {
+    background: #639003;
+    width: 30px;
+    border-radius: 5px;
+}
+
+.money {
+    width: 50px;
 }
