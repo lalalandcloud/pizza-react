@@ -1,12 +1,18 @@
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import pizzaData from '../../pizzas.json'
 import './contenu.css'
+import Cart from "./Cart"
+import { useDispatch } from 'react-redux'
+import { addPizza } from '../redux/panierSlice'
 
 
 export default function Contenu () {
+    // test :
+    const dispatch = useDispatch()
 
     return(
-
+        <>
+        <div className="d-flex">
         <div className="contenuA">
             <div className="contenuTitle">
                 <h3>Pizzas</h3>
@@ -28,13 +34,17 @@ export default function Contenu () {
                     </div>
                     <div className="cardEnd">
                         <p>à partir de <span>€{pizzaData.price}</span> </p>
-                        <button className="btnAdd">+</button>
-                    </div>  
+                        <button className="btnAdd" onClick={() => dispatch(addPizza(pizzaData))}>+</button>
+                        {/* <button className="btnAdd">+</button> */}
+                    </div>
 
                 </Link>
 
             ))}
         
         </div>
+        <Cart />
+        </div>
+        </>
     )
 }
