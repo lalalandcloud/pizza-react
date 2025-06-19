@@ -52,8 +52,9 @@ export default function Cart() {
                                                     <p className="p-0 m-0">{item.quantity}</p>
                                                     <button onClick={() => dispatch(addPizza(item))}>+</button>
                                                 </div>
-                                                <div>
-                                                    <button onClick={() => dispatch(deletePizza2(item.name))}>X</button>
+                                                <div className="d-flex gap-2">
+                                                    <button>Modifier</button>
+                                                    <button onClick={() => dispatch(deletePizza2(item.name))}>Supprimer</button>
                                                 </div>
                                             </div>
                                         </div>

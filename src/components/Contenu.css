@@ -1,12 +1,43 @@
+.content {
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 40px;
+}
+
 .contenuA{
     display: flex;
-    width: 80vw;    
+    /* width: 80vw;     */
+    flex: 3;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    border: 1px solid red;
+    gap: 40px;
+
 }
+.div-cart {
+    flex: 1;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: right;
+}
+
 .cardLink{
-    width: 25%;
+    /* width: 25%; */
+    border: 1px solid black;
+    width: 260px;
 }
+
+.cardImg {
+    width: 100%;
+}
+
+.cardImg img {
+    object-fit: contain;
+    width: 260px;
+}
+
 .btnAdd{
     background-color: #c8102e;
     color: white;
