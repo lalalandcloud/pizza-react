@@ -1,6 +1,6 @@
 import './cart.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { deletePizza } from '../redux/panierSlice'
+import { addPizza, deletePizza, deletePizza2 } from '../redux/panierSlice'
 
 export default function Cart() {
 
@@ -9,11 +9,28 @@ export default function Cart() {
     const cartItems = useSelector(state => state.panier)
     const result = cartItems.reduce((total, currentValue) => total = total + currentValue.price, 0);
 
+    // on va réutiliser le pincipe du reduce pour calculer la quantité de pizzas (et grouper les pizzas par nom) :
+    const pizzasGroup = cartItems.reduce((newArray, pizza) => 
+        {
+            // on va checker si la pizza ajoutée existe déjà dans le cart
+            const existante = newArray.find(i => i.name === pizza.name)
+
+            if (existante) {
+                existante.quantity += 1
+            }
+            else {
+                // on ajoute une nouvelle propriété à l'array copiée (quantity, qui n'existait pas dans le data set original)
+                newArray.push({...pizza, quantity: 1})
+            }
+            return newArray
+        // la valeur initiale du reduce : un empty array qu'on va ensuite accumuler. il faut faire en sorte que ce soit un array vide car on va utiliser la méthode find dessus => il faut une array et pas un objet, s'il y n'y avait pas cette précision par défaut react prendrait le premier item de cartItem (un objet) 
+        }, [])
+
     return(
 
         <>
   
-        <div className="cart d-flex flex-column justify-content-between gap-2">
+        <div className="cart flex-column justify-content-between gap-2">
             {/* Recap panier */}
             <div className="panier d-flex flex-column justify-content-between">
                 <div className="cart-bis p-3">
@@ -21,13 +38,23 @@ export default function Cart() {
                     <h2>Panier d'achat</h2>
                         {/* Items ajoutés au panier */}
                         <div className="cart-content">
-                            {cartItems.map((item, index) => {
+                            {pizzasGroup.map((item, index) => {
                                 return (
                                     <div key={index} className="d-flex flex-column">
-                                        <div className="d-flex gap-2">
-                                            <p>{item.name} - €{item.price}</p>
-                                            <div>
-                                                <button onClick={() => dispatch(deletePizza(item.name))}>X</button>
+                                        <div className="">
+                                            <div className="d-flex justify-content-between align-items-center border">
+                                                <p className="p-0 m-0">{item.name}</p>
+                                                <p className="p-0 m-0">€{(item.price*item.quantity).toFixed(2)}</p>
+                                            </div>
+                                            <div className="d-flex justify-content-between align-items-center border">
+                                                <div className="d-flex">
+                                                    <button onClick={() => dispatch(deletePizza(item.name))}>-</button>
+                                                    <p className="p-0 m-0">{item.quantity}</p>
+                                                    <button onClick={() => dispatch(addPizza(item))}>+</button>
+                                                </div>
+                                                <div>
+                                                    <button onClick={() => dispatch(deletePizza2(item.name))}>X</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
