@@ -74,3 +74,10 @@
 .total h5 {
     font-size: 17px;
 }
+
+@media (min-width: 780px) {
+.cart h2 {
+    font-size: 25px;
+    font-family: "BlockBE";
+}
+}

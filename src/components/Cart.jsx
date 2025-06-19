@@ -16,7 +16,7 @@ export default function Cart() {
         <div className="cart d-flex flex-column justify-content-between gap-2">
             {/* Recap panier */}
             <div className="panier d-flex flex-column justify-content-between">
-                <div className="cart-bis p-2">
+                <div className="cart-bis p-3">
                 {/* Titre */}
                     <h2>Panier d'achat</h2>
                         {/* Items ajoutés au panier */}
