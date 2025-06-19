@@ -13,10 +13,18 @@ export default function Detail(){
     
     const {name} = useParams();
 
-    const [open, setOpen] = useState(true)
+    const [openIngredients, setOpenIngredients] = useState(true)
+    const [openAdd, setOpenAdd] = useState(true)
+       
     const pizza = pizzaData.find(pizza => pizza.name.toLowerCase() === name?.toLowerCase())
     const ingredients = useSelector(state => state.ingredient)
     const panier = useSelector (state => state.panier)
+
+    const availableIngredients = ingredients.filter(ingredient => 
+        !pizza.ingredients?.some(pizzaIngredient => 
+            pizzaIngredient.name === ingredient.name
+        )
+    )
 
     return(
 
@@ -42,11 +50,11 @@ export default function Detail(){
 
                                     <div className='dropdown'>
 
-                                        <button onClick={() => setOpen(!open)}>
+                                        <button onClick={() => setOpenIngredients(!openIngredients)}>
                                             Ingrédients
                                         </button>
 
-                                        {open && pizza &&(
+                                        {openIngredients && pizza &&(
                                             <div className='dropdown-content'>
                                                 {pizza.ingredients?.map((ingredient, index) => (
 
@@ -61,16 +69,14 @@ export default function Detail(){
                                     </div>
                                     <div className='dropdown'>
 
-                                        <button onClick={() => setOpen(!open)}>
+                                        <button onClick={() => setOpenAdd(!openAdd)}>
                                             Ingrédients à ajouter
                                         </button>
 
-                                        {open && ingredients &&(
+                                        {openAdd && availableIngredients && (
                                             <div className='dropdown-content'>
-                                                {pizza.ingredients.map((ingredient) => (
-
-                                                    <div key={ingredient} className='dropdown-item'>
-                                                        <span>{ingredient.icon}</span>
+                                                {availableIngredients.map((ingredient, index) => (
+                                                    <div key={index} className='dropdown-item'>
                                                         <span>{ingredient.name}</span>
                                                     </div>
                                                 ))}
