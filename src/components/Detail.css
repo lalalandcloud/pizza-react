@@ -1,10 +1,13 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: 20px;
 }
 
 .dropdown-content {
     position: absolute;
+    top: 100%;
+    left: 0;
     background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -14,9 +17,25 @@
 
 .dropdown-item {
     padding: 12px 16px;
-    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .dropdown-item:hover {
     background-color: #f1f1f1;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
 }

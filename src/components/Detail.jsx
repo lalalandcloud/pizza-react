@@ -7,10 +7,24 @@ import { useState } from 'react'
 
 export default function Detail(){
 
+
+    const params = useParams();
+    console.log('All params: ', params);
+    
+    const {name} = useParams();
+    
+    // console.log('name from params:', name);
+    // console.log('pizzaData:', pizzaData);
+
     const [open, setOpen] = useState(false)
-    const {name} = useParams()
-    const pizza = pizzaData.find(pizza => pizza.name === name)
-    const ingredients = useSelector(state => state.ingredients)
+    const pizza = pizzaData.find(pizza => pizza.name.toLowerCase() === name?.toLowerCase())
+    const ingredients = useSelector(state => state.ingredient)
+    const panier = useSelector (state => state.panier)
+
+    console.log('pizza: ', pizza);
+    console.log('pizza.ingredients: ', pizza.ingredients);
+    
+    
 
     return(
 
@@ -27,12 +41,13 @@ export default function Detail(){
                         Ingrédients
                     </button>
 
-                    {open &&(
+                    {open && pizza &&(
                         <div className='dropdown-content'>
-                            {ingredients && ingredients.map((ingredient) => (
+                            {pizza.ingredients?.map((ingredient, index) => (
 
-                                <div key={ingredient} className='dropdown-item'>
-                                    {ingredient}
+                                <div key={index} className='dropdown-item'>
+                                    <span>{ingredient.icon}</span>
+                                    <span>{ingredient.name}</span>
                                 </div>
                             ))}
                         </div>

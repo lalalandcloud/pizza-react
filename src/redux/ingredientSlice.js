@@ -6,7 +6,7 @@ const uniqueIngredients = [ ...new Set(pizzaData.flatMap(pizza => pizza.ingredie
 const ingredientSlice = createSlice({
     name: 'ingredient',
     initialState : uniqueIngredients,
-    reducer: {}
+    reducers: {}
 })
 
 export default ingredientSlice.reducer

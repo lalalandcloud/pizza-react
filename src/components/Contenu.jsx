@@ -20,7 +20,7 @@ export default function Contenu () {
             {pizzaData.map((pizzaData) => (
                 
                 <Link 
-                    to={`/detail/${pizzaData.name}`}
+                    to={`/pizza/${pizzaData.name}`}
                     key={pizzaData.name} 
                     className="cardLink"
                 >     
