@@ -7,15 +7,17 @@ export default function Cart() {
     const dispatch = useDispatch()
 
     const cartItems = useSelector(state => state.panier)
-    const result = cartItems.reduce((total, currentValue) => total = total + currentValue.price,0);
+    const result = cartItems.reduce((total, currentValue) => total = total + currentValue.price, 0);
 
     return(
 
         <>
+  
         <div className="cart">
-            <h2>Votre panier</h2>
+
+            <h2>Panier d'achat</h2>
             <p>Quantité : {cartItems.length}</p>
-            <div>
+            <div className="">
                 {cartItems.map((item, index) => {
                     return (
                         <div key={index} className="d-flex flex-column">
@@ -29,10 +31,27 @@ export default function Cart() {
                     )
                 })}
                 <div>
-                    <h4>Total: {result}</h4>
+                    <h4>Total: € {result}</h4>
                 </div>
             </div>
+
+            <div>
+                <button className="w-100 d-flex justify-content-evenly">
+                    <div>
+                        {cartItems.length}
+                    </div>
+                    <div>
+                        <p className="p-0 m-0">Commander</p>
+                    </div>
+                    <div>
+                        {result}
+                    </div>
+
+                </button>
+            </div>
+
+
         </div>
-        </>
+    </>
     )
 }
