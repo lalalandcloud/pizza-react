@@ -5,14 +5,15 @@ import App from './App.jsx'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter } from 'react-router-dom'
-BrowserRouter
+import store from './redux/store.js'
+import { Provider } from 'react-redux'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <Provider store={store}> */}
+    <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-    {/* </Provider> */}
+    </Provider>
   </StrictMode>,
 )
