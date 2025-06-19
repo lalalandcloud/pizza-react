@@ -1,0 +1,23 @@
+.cart {
+    height: 400px;
+    width: 250px;
+    /* border: 1px solid black; */
+    position: fixed;
+    right: 0;
+}
+.panier {
+    height: 90%;
+}
+
+.commander {
+    background: #70a401;
+}
+
+.cart-bis {
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.total {
+    background: #f5f7f9;
+}
