@@ -27,10 +27,10 @@ export default function Contenu () {
                             <h3 className="m-0">{pizzaData.name}</h3>
                             {/* <p>{pizzaData.description}</p> */}
                         </div>
-                        <div className="cardEnd">
+                        <div className="cardEnd d-flex justify-content-end pe-3">
                             <p className="p-2 m-0">à partir de <span>€{pizzaData.price}</span> </p>
-                            <div>
-                                <button className="btnAdd" onClick={() => dispatch(addPizza(pizzaData))}>+</button>
+                            <div className="d-flex align-items-center">
+                                <div className="btnAdd d-flex align-items-center justify-content-center" onClick={() => dispatch(addPizza(pizzaData))} role="button">+</div>
                             </div>
                         </div>
 
