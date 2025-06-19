@@ -10,21 +10,14 @@ export default function Detail(){
 
 
     const params = useParams();
-    
     const {name} = useParams();
 
-    const [openIngredients, setOpenIngredients] = useState(true)
-    const [openAdd, setOpenAdd] = useState(true)
+    const [open, setOpen] = useState(true)
        
     const pizza = pizzaData.find(pizza => pizza.name.toLowerCase() === name?.toLowerCase())
     const ingredients = useSelector(state => state.ingredient)
     const panier = useSelector (state => state.panier)
-
-    const availableIngredients = ingredients.filter(ingredient => 
-        !pizza.ingredients?.some(pizzaIngredient => 
-            pizzaIngredient.name === ingredient.name
-        )
-    )
+    
 
     return(
 
@@ -48,44 +41,25 @@ export default function Detail(){
                     <p>{pizza.description}</p>
 
 
-                                    <div className='dropdown'>
+                    <div className='dropdown'>
 
-                                        <button onClick={() => setOpenIngredients(!openIngredients)}>
-                                            Ingrédients
-                                        </button>
+                        <button onClick={() => setOpen(!open)} className='btn-dropdown'>
+                            Ingrédients
+                        </button>
 
-                                        {openIngredients && pizza &&(
-                                            <div className='dropdown-content'>
-                                                {pizza.ingredients?.map((ingredient, index) => (
+                        {open && pizza &&(
+                            <div className='dropdown-content'>
+                                {pizza.ingredients?.map((ingredient, index) => (
 
-                                                    <div key={index} className='dropdown-item'>
-                                                        <span>{ingredient.icon}</span>
-                                                        <span>{ingredient.name}</span>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        
-                                        )}
+                                    <div key={index} className='dropdown-item'>
+                                        <img src={`/assets/img/ingredients_decoupes/${ingredient.icon}.png`} alt="" />
+                                        <span>{ingredient.name}</span>
                                     </div>
-                                    <div className='dropdown'>
-
-                                        <button onClick={() => setOpenAdd(!openAdd)}>
-                                            Ingrédients à ajouter
-                                        </button>
-
-                                        {openAdd && availableIngredients && (
-                                            <div className='dropdown-content'>
-                                                {availableIngredients.map((ingredient, index) => (
-                                                    <div key={index} className='dropdown-item'>
-                                                        <span>{ingredient.name}</span>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        
-                                        )}
-                                    </div>
-
-
+                                ))}
+                            </div>
+                        
+                        )}
+                    </div>
                     <div className='detail-ajout'>
                         <button>Ajouter au panier €{pizza.price}</button>
                     </div>
