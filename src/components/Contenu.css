@@ -20,27 +20,27 @@
     text-align: center;
 }
 .contenuTitle h3::before{
-    width: 100%;
+    width: 46%;
     height: 2px;
     left: 0;
-    bottom: -5px;
+    bottom: 15px;
     content: "";
     background-color: black;
     position: absolute;
-
 }
-/* .contenuTitle h3::after{
-    width: 100%;
+.contenuTitle h3::after{
+    width: 46%;
     height: 2px;
-    left: 0;
-    bottom: -5px;
+    right: 0;
+    bottom: 15px;
     content: "";
     background-color: black;
     position: absolute;
+}
 
-} */
 .contenuTitle > h3{
-    width: fit-content;
+    /* width: fit-content; */
+    text-align: center;
     position: relative;
-    
+
 }
