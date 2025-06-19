@@ -18,6 +18,7 @@
 .panier {
     height: 90%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
 }
 
 .commander {
@@ -41,16 +42,16 @@
     overflow-y: scroll;
     scrollbar-width: none;
     background: white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     height: 340px;
 
 }
 
 .total {
     background: #f5f7f9;
-    border-bottom-left-radius: 5px;     
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 8px;     
+    border-bottom-right-radius: 8px;
 }
 
 .quantite {

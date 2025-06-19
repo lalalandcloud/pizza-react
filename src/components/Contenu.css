@@ -14,8 +14,13 @@
     justify-content: space-between;
     /* border: 1px solid red; */
     gap: 26px;
-
 }
+
+.contenuA h3, .contenuA span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .div-cart {
     flex: 1;
     /* border: 1px solid green; */
@@ -32,9 +37,9 @@
     border-radius: 5px;
 }
 
-
 .cardImg img {
     object-fit: cover;
+    object-position: top right;
     width: 280px;
     height: 180px;
     border-top-left-radius: 5px;
