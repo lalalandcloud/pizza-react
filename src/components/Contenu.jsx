@@ -1,10 +1,11 @@
-import { Link } from "react-router"
+import { Link, useParams } from "react-router-dom"
 import pizzaData from '../../pizzas.json'
 import './contenu.css'
 
 
 export default function Contenu () {
     const {id} = useParams()
+
 
 
     return(
@@ -15,31 +16,26 @@ export default function Contenu () {
             </div>
             {pizzaData.map((pizzaData) => (
                 
-                <Link to={`/detail/${pizzaData.name}`}>
-                
-                    
-                    <div 
-                        key={pizzaData.name} 
-                        className="cardLink"
-                    >
-                        {/* <div className="cardOne"> */}
-                        <div className="cardImg">
-                            <img src={pizzaData.image} alt="" />
-                        </div>
-                        <div>
-                            <h3>{pizzaData.name}</h3>
-                            <p>{pizzaData.description}</p>
-                        </div>
-                        <div className="cardEnd">
-                            <p>à partir de <span>€{pizzaData.price}</span> </p>
-                            <button className="btnAdd">+</button>
-                        </div>
+                <Link 
+                    to={`/detail/${pizzaData.name}`}
+                    key={pizzaData.name} 
+                    className="cardLink"
+                >     
 
-                        {/* </div> */}
-
+                    <div className="cardImg">
+                        <img src={pizzaData.image} alt="" />
                     </div>
-                
+                    <div>
+                        <h3>{pizzaData.name}</h3>
+                        <p>{pizzaData.description}</p>
+                    </div>
+                    <div className="cardEnd">
+                        <p>à partir de <span>€{pizzaData.price}</span> </p>
+                        <button className="btnAdd">+</button>
+                    </div>  
+                                  
                 </Link>
+
             ))}
         
         </div>

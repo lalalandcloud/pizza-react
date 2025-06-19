@@ -4,6 +4,10 @@
     flex-wrap: wrap;    
     margin: auto;
 }
+.contenuA > a{
+    color: black;
+    text-decoration: none;
+}
 .cardLink{
     width: 25%;
 }
@@ -46,6 +50,7 @@
 }
 .cardImg{
     height: 65%;
+    overflow: hidden;
 
 }
 .cardImg > img{
