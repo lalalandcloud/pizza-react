@@ -38,8 +38,8 @@ export default function Cart() {
                 {/* Total */}
                 <div className="total">
                         <div className="d-flex justify-content-between p-3">
-                            <h6 className="p-0 m-0">Total</h6>
-                            <h6 className="p-0 m-0">€{result}</h6>
+                            <h5 className="p-0 m-0">Total</h5>
+                            <h5 className="p-0 m-0">€{result.toFixed(2)}</h5>
                         </div>
                 </div>
 
@@ -50,13 +50,15 @@ export default function Cart() {
             <div>
                 <button disabled={cartItems.length === 0} className="w-100 commander d-flex justify-content-between px-3 py-2">
                     <div className="quantite">
+                        <div className="quantite-2">
                         <p className="p-0 m-0">{cartItems.length}</p>
+                        </div>
                     </div>
-                    <div>
+                    <div className="btn-commander">
                         <p className="p-0 m-0">Commander</p>
                     </div>
                     <div className="money">
-                        <p className="p-0 m-0">€ {result}</p>
+                        <p className="p-0 m-0">€{result.toFixed(2)}</p>
                     </div>
 
                 </button>

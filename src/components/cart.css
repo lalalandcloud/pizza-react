@@ -1,6 +1,6 @@
 .cart {
     height: 440px;
-    width: 260px;
+    width: 270px;
     /* border: 1px solid black; */
     position: fixed;
     right: 10px;
@@ -17,14 +17,14 @@
     border: none;
     color: white;
     font-size: 21px;
-    font-weight: 300;
+    height: 50px;
 }
 
 .commander:disabled {
     background-color: #c6db99;
 }
 
-.commander:disabled .quantite {
+.commander:disabled .quantite-2 {
     background-color: #a8c46c;
 }
 
@@ -45,11 +45,32 @@
 }
 
 .quantite {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantite-2 {
     background: #639003;
-    width: 30px;
     border-radius: 5px;
+    width: 70%;
 }
 
 .money {
-    width: 50px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-commander {
+    display: flex;
+    justify-content: center;
+    flex: 3;
+    align-items: center;
+}
+
+.total h5 {
+    font-size: 17px;
 }
