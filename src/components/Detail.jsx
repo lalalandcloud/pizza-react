@@ -1,0 +1,2 @@
+import './Detail.css'
+
