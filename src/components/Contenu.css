@@ -44,3 +44,10 @@
     position: relative;
 
 }
+.cardImg{
+    height: 65%;
+
+}
+.cardImg > img{
+    width: 100%;
+}
