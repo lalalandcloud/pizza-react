@@ -13,10 +13,10 @@ export default function Cart() {
 
         <>
   
-        <div className="cart d-flex flex-column justify-content-between">
+        <div className="cart d-flex flex-column justify-content-between gap-2">
             {/* Recap panier */}
-            <div className="panier d-flex flex-column justify-content-between border border-3">
-                <div className="h-100 border cart-bis">
+            <div className="panier d-flex flex-column justify-content-between">
+                <div className="h-100 cart-bis p-2">
                 {/* Titre */}
                     <h2>Panier d'achat</h2>
                         {/* Items ajoutés au panier */}
@@ -37,7 +37,10 @@ export default function Cart() {
                 </div>
                 {/* Total */}
                 <div className="total">
-                        <h4>Total: € {result}</h4>
+                        <div className="d-flex justify-content-between p-3">
+                            <h6 className="p-0 m-0">Total</h6>
+                            <h6 className="p-0 m-0">€{result}</h6>
+                        </div>
                 </div>
 
 
@@ -45,7 +48,7 @@ export default function Cart() {
 
             {/* Bouton Commander */}
             <div>
-                <button disabled className="w-100 commander d-flex justify-content-evenly">
+                <button disabled={cartItems.length === 0} className="w-100 commander d-flex justify-content-between px-3 py-2">
                     <div>
                         <p className="p-0 m-0">{cartItems.length}</p>
                     </div>

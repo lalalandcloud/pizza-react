@@ -3,19 +3,35 @@
     width: 250px;
     /* border: 1px solid black; */
     position: fixed;
-    right: 0;
+    right: 10px;
+    top: 70px;
 }
 .panier {
     height: 90%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-bottom-left-radius: 5px;     
+    border-bottom-right-radius: 5px;
 }
 
 .commander {
     background: #70a401;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 23px;
+    font-weight: 300;
+}
+
+.commander:disabled {
+    background-color: #c6db99;
 }
 
 .cart-bis {
     overflow-y: scroll;
     scrollbar-width: none;
+    background: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .total {

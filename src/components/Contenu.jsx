@@ -12,7 +12,7 @@ export default function Contenu () {
 
     return(
         <>
-        <div className="d-flex">
+        <div className="d-flex content">
         <div className="contenuA">
             {pizzaData.map((pizzaData) => (
                 <div 
