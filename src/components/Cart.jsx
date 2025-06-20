@@ -47,16 +47,16 @@ export default function Cart() {
                                                 <p className="pizza-price p-0 m-0"><b>€{(item.price*item.quantity).toFixed(2)}</b></p>
                                             </div>
                                             <div className="d-flex justify-content-between align-items-center">
-                                                <div className="d-flex gap-1">
+                                                <div className="d-flex gap-2">
                                                     <div className="btn-qt" role="button" onClick={() => dispatch(deletePizza(item.name))}>
-                                                        <p className="p-0 m-0">-</p>
+                                                        <p className="p-0 m-0">ー</p>
                                                     </div>
                                                     <p className="p-0 m-0"><b>{item.quantity}</b></p>
                                                     <div className="btn-qt" role="button" onClick={() => dispatch(addPizza(item))}>
                                                         <p className="p-0 m-0">+</p>
                                                     </div>
                                                 </div>
-                                                <div className="d-flex gap-2">
+                                                <div className="d-flex btns-change gap-2">
                                                     <button>Modifier</button>
                                                     <button onClick={() => dispatch(deletePizza2(item.name))}>Supprimer</button>
                                                 </div>
