@@ -75,8 +75,10 @@ export default function Detail(){
                                 {pizza.ingredients?.map((ingredient, index) => (
 
                                     <div key={index} className='dropdown-item'>
-                                        <img className='detail-icon' src={`/assets/img/ingredients_decoupes/${ingredient.icon}.png`} alt="" />
-                                        <span>{ingredient.name}</span>
+                                        <div className='dropdown-detail'>
+                                            <img className='detail-icon' src={`/assets/img/ingredients_decoupes/${ingredient.icon}.png`} alt="" />
+                                            <span>{ingredient.name}</span>
+                                        </div>
                                         <div className='detail-count'>
                                             <button
                                                 className='detail-btn' 
@@ -103,8 +105,8 @@ export default function Detail(){
                         
                         )}
                     </div>
-                    <div className='detail-ajout'>
-                        <button onClick={handleAddToCart}>Ajouter au panier €{pizza.price}</button>
+                    <div>
+                        <button className='detail-ajout' onClick={handleAddToCart}>Ajouter au panier €{pizza.price}</button>
                     </div>
 
                 </div>
