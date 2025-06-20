@@ -67,6 +67,11 @@ export default function Cart() {
                             })}
                         </div>
                 </div>
+                {/* Coupon */}
+                <div className="div-coupon">
+                    <input type="text" placeholder="Entrez votre coupon" />
+                </div>
+
                 {/* Total */}
                 <div className="total">
                         <div className="d-flex justify-content-between p-3">
