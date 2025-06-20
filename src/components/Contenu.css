@@ -3,7 +3,7 @@
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
-    width: 98vw;
+    width: 97vw;
     box-sizing: border-box;
 }
 
@@ -11,8 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 26px;
-    
+    gap: 2.6vw;
 }
 
 .contenuA h3, .contenuA span {
@@ -43,13 +42,14 @@
     .content {
     padding-left: 160px;
     padding-right: 160px;
-    width: 100%;
+    width: 99vw;
     }
     .cardLink, .cardImg img {
         width: 280px !important;
     }
     .contenuA{
         flex: 3;
+        gap: 20px;
     }
 
     .contenuA{
