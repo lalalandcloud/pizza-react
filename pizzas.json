@@ -4,6 +4,7 @@
     "description": "Doritos Nachos, Poulet Kebab, Cheddar, Jalapños, Tomates en dés, Sauce Tomates, Mozzarella",
     "price": 20.1,
     "image": "https://cdn-catalog.pizzahut.be/images/be/20250512134948432.png",
+    "image-bis": "/assets/img/jalapenos.png",
     "ingredients": [
       { "name": "Poulet Kebab", "icon": "kipkebab", "price": 2.2 },
       { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
@@ -23,6 +24,7 @@
     "description": "Boulettes de falafel, coulis de basilic, tomates en dés, persil, sauce tomate, fromage vegan Violife",
     "price": 20.1,
     "image": "https://cdn-catalog.pizzahut.be/images/be/20230310155103630.png",
+    "imageBis": "/assets/img/falafel.png",
     "ingredients": [
       { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
       { "name": "Fromage vegan Violife", "icon": "violife", "price": 2.2 },

@@ -30,7 +30,7 @@ export default function Detail(){
             </Link>
            <div className='detail-glo'>
                 <div className='detail-img'>
-                    <img src={pizza.image} alt="" />
+                    <img src={pizza.imageBis} alt="" />
                 </div>
 
                 <div className='detail-text'>
