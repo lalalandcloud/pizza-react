@@ -40,7 +40,7 @@ export default function Cart() {
                         <div className={`cart-content ${cartItems.length > 0 ? "added" : ""}`}>
                             {pizzasGroup.map((item, index) => {
                                 return (
-                                    <div key={index} className="d-flex flex-column px-3 py-2">
+                                    <div key={index} className="d-flex flex-column px-3 py-2 borders">
                                         <div className="d-flex flex-column gap-2">
                                             <div className="d-flex justify-content-between align-items-center">
                                                 <p className="pizza-name p-0 m-0"><b>{item.name}</b></p>

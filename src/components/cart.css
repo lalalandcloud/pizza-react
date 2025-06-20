@@ -92,6 +92,9 @@
 
 .cart-content.added {
     border-top: 1px dashed rgb(196, 196, 196);
+}
+
+.borders { 
     border-bottom: 1px dashed rgb(196, 196, 196);
 }
 
@@ -129,6 +132,10 @@
     font-size: 15px;
     font-family: "Afacad Flux";
     font-weight: 300;
+}
+
+.btns-change button:first-of-type {
+    color: #c8102e;
 }
 
 @media (min-width: 780px) {
