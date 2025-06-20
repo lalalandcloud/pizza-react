@@ -127,7 +127,7 @@
 }
 
 .pizza-texts {
-    height: 46px; 
+    height: 40px; 
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     background-color: white;
 }
