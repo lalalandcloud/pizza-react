@@ -1,13 +1,18 @@
 import './App.css'
+import Contenu from './components/Contenu'
+import Detail from './components/Detail'
 import Home from './pages/Home'
-import { Routes, Route } from 'react-router'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
 
   return (
     <>
     <Routes>
-      <Route index element={<Home />} />
+      <Route path='/' element={<Home/>}>
+        <Route index element={<Contenu/>} />
+        <Route path='/pizza/:name' element={<Detail/>}/>
+      </Route>
     </Routes>
     </>
   )

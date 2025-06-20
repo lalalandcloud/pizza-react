@@ -14,12 +14,17 @@ export default function Contenu () {
         <>
         <div className="d-flex">
         <div className="contenuA">
+            <div className="contenuTitle">
+                <h3>Pizzas</h3>
+            </div>
             {pizzaData.map((pizzaData) => (
-                <div 
+                
+                <Link 
+                    to={`/pizza/${pizzaData.name}`}
                     key={pizzaData.name} 
                     className="cardLink"
-                >
-                    {/* <div className="cardOne"> */}
+                >     
+
                     <div className="cardImg">
                         <img src={pizzaData.image} alt="" />
                     </div>
@@ -33,9 +38,8 @@ export default function Contenu () {
                         {/* <button className="btnAdd">+</button> */}
                     </div>
 
-                    {/* </div> */}
+                </Link>
 
-                </div>
             ))}
         
         </div>

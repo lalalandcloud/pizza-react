@@ -1,0 +1,145 @@
+.detail-a{
+    width: 80%;
+    /* margin: auto; */
+    margin: 0 auto 15px;
+    padding: 0 15px;
+}
+.detail-glo{
+    width: 70%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    height: 80vh ;
+    margin: auto;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+.detail-text{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: white;
+    padding: 15px;
+
+}
+.detail-text-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.detail-text-header > h5{
+    font-weight: normal;
+
+}
+.detail-text > p{
+    color: #9799a0;
+    font-size: 14pt;
+}
+.detail-img{
+    width: 50%;
+    height: 80vh;
+    overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.detail-img > img{
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 99%;
+    height: 50%;
+    border: 2px #f5f7f9 solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+.btn-dropdown{
+    background-color: white;
+    color: black;
+    font-size: 16pt;
+    font-weight: 590;
+    margin-bottom: 20px;
+}
+
+.dropdown-content {
+    position: absolute;
+    left: 0;
+    background-color: white;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 4px;
+    width: 90%;
+    margin: 10px;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.dropdown-item > img{
+    width: 30px;
+    height: 30px;
+
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+
+.detail-ajout{
+    background-color: #70a401;
+    width: 100%;
+    padding: 18px;
+    font-size: 18pt;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.detail-ajout:hover{
+    background-color: #4c6f01;
+}
+button{
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+.detail-icon{
+    margin-right: 15px;
+    height: 40px;
+    width: 40px;
+
+}
+.detail-btn{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #70a401;
+    transition: ease-in-out 300ms;
+    margin: 4px;
+}
+.detail-btn:disabled{
+    background-color: white;
+}
+.dropdown-detail > span{
+    font-size: 13pt;
+}
+.detail-count > span {
+    font-weight: 700;
+    font-size: 13pt ;
+}

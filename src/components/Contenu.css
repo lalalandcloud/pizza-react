@@ -1,8 +1,12 @@
 .contenuA{
     display: flex;
     width: 80vw;    
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap;    
+    margin: auto;
+}
+.contenuA > a{
+    color: black;
+    text-decoration: none;
 }
 .cardLink{
     width: 25%;
@@ -14,4 +18,41 @@
 }
 .cardEnd{
     display: flex;
+}
+.contenuTitle{
+    width: 80vw;
+    text-align: center;
+}
+.contenuTitle h3::before{
+    width: 46%;
+    height: 2px;
+    left: 0;
+    bottom: 15px;
+    content: "";
+    background-color: black;
+    position: absolute;
+}
+.contenuTitle h3::after{
+    width: 46%;
+    height: 2px;
+    right: 0;
+    bottom: 15px;
+    content: "";
+    background-color: black;
+    position: absolute;
+}
+
+.contenuTitle > h3{
+    /* width: fit-content; */
+    text-align: center;
+    position: relative;
+
+}
+.cardImg{
+    height: 65%;
+    overflow: hidden;
+
+}
+.cardImg > img{
+    width: 100%;
 }
