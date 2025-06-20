@@ -19,10 +19,18 @@ export default function Contenu () {
             <div className="d-flex content">
                 <div className="contenuA">
                     {pizzaData.map((pizzaData) => (
-                        <div 
-                            key={pizzaData.name} 
+                        // <div 
+                        //     key={pizzaData.name} 
+                        //     className="cardLink"
+                        //     onMouseOver={() => setHoveredItem(pizzaData.name)} onMouseOut={() => setHoveredItem(null)}
+                        // >
+                        <Link
+                            key={pizzaData.name}
+                            to={`/pizza/${pizzaData.name}`}
                             className="cardLink"
-                            onMouseOver={() => setHoveredItem(pizzaData.name)} onMouseOut={() => setHoveredItem(null)}
+                            onMouseOver={() => setHoveredItem(pizzaData.name)}
+                            onMouseOut={() => setHoveredItem(null)}
+                            style={{ textDecoration: 'none', color: 'inherit' }} // pour garder le style
                         >
                             {/* <div className="cardOne"> */}
                             <div className="cardImg">
@@ -40,10 +48,7 @@ export default function Contenu () {
                                     <div className="btnAdd d-flex align-items-center justify-content-center" onClick={() => dispatch(addPizza(pizzaData))} role="button">+</div>
                                 </div>
                             </div>
-                            
-                            {/* </div> */}
-
-                        </div>
+                        </Link>
                     ))}
                 
                 </div>
