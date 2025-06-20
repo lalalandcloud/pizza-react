@@ -1,13 +1,16 @@
 import { Link, useParams } from 'react-router-dom'
 import './Detail.css'
 import pizzaData from '../../pizzas.json'
-import { useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
 import Cart from './Cart'
+import { addPizza } from '../redux/panierSlice'
 
 
 export default function Detail(){
 
+
+    const dispatch = useDispatch()
 
     const params = useParams();
     const {name} = useParams();
@@ -17,7 +20,27 @@ export default function Detail(){
     const pizza = pizzaData.find(pizza => pizza.name.toLowerCase() === name?.toLowerCase())
     const ingredients = useSelector(state => state.ingredient)
     const panier = useSelector (state => state.panier)
-    
+
+    const [counts, setCounts] = useState([]);
+    useEffect(() => {
+        setCounts(pizza?.ingredients ? Array(pizza.ingredients.length).fill(1) : []);
+    }, [pizza]);
+
+
+
+
+    const handleAddToCart = () => {
+        dispatch(addPizza({
+                name: pizza.name,
+                price: pizza.price,
+                counts: counts,
+                ingredient: pizza.ingredients
+            
+        }))
+    }
+
+
+
 
     return(
 
@@ -54,6 +77,24 @@ export default function Detail(){
                                     <div key={index} className='dropdown-item'>
                                         <img src={`/assets/img/ingredients_decoupes/${ingredient.icon}.png`} alt="" />
                                         <span>{ingredient.name}</span>
+                                        <div>
+                                            <button 
+                                                onClick={() => {
+                                                    const newCounts = [...counts];
+                                                    newCounts[index] = Math.max(0, newCounts[index] -1);
+                                                    setCounts(newCounts)
+                                                }}
+                                                disabled={counts[index] === 0}
+                                            >-</button>
+                                            <span>{counts[index]}</span>
+                                            <button
+                                                onClick={() => {
+                                                    const newCounts = [...counts];
+                                                    newCounts[index] = Math.min(5, newCounts[index] + 1);
+                                                    setCounts(newCounts);
+                                                }}
+                                                disabled ={counts[index]===1}>+</button>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -61,7 +102,7 @@ export default function Detail(){
                         )}
                     </div>
                     <div className='detail-ajout'>
-                        <button>Ajouter au panier €{pizza.price}</button>
+                        <button onClick={handleAddToCart}>Ajouter au panier €{pizza.price}</button>
                     </div>
 
                 </div>
