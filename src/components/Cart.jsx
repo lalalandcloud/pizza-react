@@ -41,17 +41,17 @@ export default function Cart() {
                             {pizzasGroup.map((item, index) => {
                                 return (
                                     <div key={index} className="d-flex flex-column px-3 py-2">
-                                        <div className="">
+                                        <div className="d-flex flex-column gap-2">
                                             <div className="d-flex justify-content-between align-items-center">
-                                                <p className="pizza-name p-0 m-0">{item.name}</p>
-                                                <p className="pizza-price p-0 m-0">€{(item.price*item.quantity).toFixed(2)}</p>
+                                                <p className="pizza-name p-0 m-0"><b>{item.name}</b></p>
+                                                <p className="pizza-price p-0 m-0"><b>€{(item.price*item.quantity).toFixed(2)}</b></p>
                                             </div>
                                             <div className="d-flex justify-content-between align-items-center">
                                                 <div className="d-flex gap-1">
                                                     <div className="btn-qt" role="button" onClick={() => dispatch(deletePizza(item.name))}>
                                                         <p className="p-0 m-0">-</p>
                                                     </div>
-                                                    <p className="p-0 m-0">{item.quantity}</p>
+                                                    <p className="p-0 m-0"><b>{item.quantity}</b></p>
                                                     <div className="btn-qt" role="button" onClick={() => dispatch(addPizza(item))}>
                                                         <p className="p-0 m-0">+</p>
                                                     </div>
