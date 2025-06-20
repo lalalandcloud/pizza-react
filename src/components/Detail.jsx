@@ -59,7 +59,7 @@ export default function Detail(){
                 <div className='detail-text'>
                     <div className='detail-text-header'>
                         <h3>{pizza.name}</h3>
-                        <h5>{pizza.price}</h5>
+                        <h5>€{pizza.price}</h5>
                     </div>
                     <p>{pizza.description}</p>
 

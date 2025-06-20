@@ -21,13 +21,17 @@
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     background-color: white;
-    padding: 10px;
+    padding: 15px;
 
 }
 .detail-text-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.detail-text-header > h5{
+    font-weight: normal;
+
 }
 .detail-text > p{
     color: #9799a0;
@@ -104,6 +108,8 @@
     width: 100%;
     padding: 18px;
     font-size: 18pt;
+    border-radius: 15px;
+    margin-top: 20px;
 }
 .detail-ajout:hover{
     background-color: #4c6f01;
@@ -119,6 +125,21 @@ button{
     width: 40px;
 
 }
+.detail-btn{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #70a401;
+    transition: ease-in-out 300ms;
+    margin: 4px;
+}
+.detail-btn:disabled{
+    background-color: white;
+}
 .dropdown-detail > span{
     font-size: 13pt;
+}
+.detail-count > span {
+    font-weight: 700;
+    font-size: 13pt ;
 }
