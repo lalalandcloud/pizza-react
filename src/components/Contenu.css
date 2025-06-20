@@ -20,10 +20,11 @@
 }
 
 .div-cart {
-    flex: 1;
+    flex: 1 1 auto;
     /* border: 1px solid green; */
     display: flex;
     justify-content: right;
+    position: relative;
 
 }
 
@@ -40,12 +41,12 @@
 @media (min-width: 1024px) {
 
     .content {
-    padding-left: 160px;
-    padding-right: 160px;
+    padding-left: 10vw;
+    padding-right: 10vw;
     width: 99vw;
     }
     .cardLink, .cardImg img {
-        width: 280px !important;
+        width: 18vw !important;
     }
     .contenuA{
         flex: 3;
