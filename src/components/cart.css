@@ -40,13 +40,16 @@
 }
 
 .cart-bis {
-    overflow-y: scroll;
-    scrollbar-width: none;
     background: white;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     height: 340px;
+}
 
+.cart-content {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    height: 230px;
 }
 
 .total {
@@ -91,12 +94,10 @@
     letter-spacing: 0.5px;
 }
 
-.cart-content.added {
-    border-top: 1px dashed rgb(196, 196, 196);
-}
 
 .borders { 
     border-bottom: 1px dashed rgb(196, 196, 196);
+    border-top: 1px dashed rgb(196, 196, 196);
 }
 
 .btn-qt {
@@ -144,4 +145,20 @@
         font-size: 25px;
         font-family: "BlockBE";
     }
+}
+.div-coupon {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+
+}
+
+.div-coupon input {
+    border: none;
+    outline: none;
+    border: 1px dashed grey;
+    border-radius: 5px;
+    
 }
