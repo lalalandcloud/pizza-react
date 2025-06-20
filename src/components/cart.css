@@ -5,7 +5,7 @@
 
 @media (min-width: 1024px) {
     .cart {
-    display: flex;
+        display: flex;
         height: 440px;
         width: 270px;
         /* border: 1px solid black; */
@@ -85,9 +85,38 @@
     font-size: 17px;
 }
 
-@media (min-width: 780px) {
-.cart h2 {
-    font-size: 25px;
-    font-family: "BlockBE";
+.pizza-name, .pizza-price {
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.5px;
 }
+
+.cart-content.added {
+    border-top: 1px dashed rgb(196, 196, 196);
+    border-bottom: 1px dashed rgb(196, 196, 196);
+}
+
+.btn-qt {
+    background: rgb(219, 219, 219);
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.btn-qt p {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 780px) {
+    .cart h2 {
+        font-size: 25px;
+        font-family: "BlockBE";
+    }
 }

@@ -33,24 +33,28 @@ export default function Cart() {
         <div className="cart flex-column justify-content-between gap-3">
             {/* Recap panier */}
             <div className="panier d-flex flex-column justify-content-between">
-                <div className="cart-bis py-2 px-3">
+                <div className="cart-bis py-2">
                 {/* Titre */}
-                    <h2>Panier d'achat</h2>
+                    <h2 className="px-3">Panier d'achat</h2>
                         {/* Items ajoutés au panier */}
-                        <div className="cart-content">
+                        <div className={`cart-content ${cartItems.length > 0 ? "added" : ""}`}>
                             {pizzasGroup.map((item, index) => {
                                 return (
-                                    <div key={index} className="d-flex flex-column">
+                                    <div key={index} className="d-flex flex-column px-3 py-2">
                                         <div className="">
-                                            <div className="d-flex justify-content-between align-items-center border">
-                                                <p className="p-0 m-0">{item.name}</p>
-                                                <p className="p-0 m-0">€{(item.price*item.quantity).toFixed(2)}</p>
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <p className="pizza-name p-0 m-0">{item.name}</p>
+                                                <p className="pizza-price p-0 m-0">€{(item.price*item.quantity).toFixed(2)}</p>
                                             </div>
-                                            <div className="d-flex justify-content-between align-items-center border">
-                                                <div className="d-flex">
-                                                    <button onClick={() => dispatch(deletePizza(item.name))}>-</button>
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <div className="d-flex gap-1">
+                                                    <div className="btn-qt" role="button" onClick={() => dispatch(deletePizza(item.name))}>
+                                                        <p className="p-0 m-0">-</p>
+                                                    </div>
                                                     <p className="p-0 m-0">{item.quantity}</p>
-                                                    <button onClick={() => dispatch(addPizza(item))}>+</button>
+                                                    <div className="btn-qt" role="button" onClick={() => dispatch(addPizza(item))}>
+                                                        <p className="p-0 m-0">+</p>
+                                                    </div>
                                                 </div>
                                                 <div className="d-flex gap-2">
                                                     <button>Modifier</button>
