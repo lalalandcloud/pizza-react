@@ -10,7 +10,7 @@
 .contenuA{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 26px;
     
 }
@@ -31,7 +31,7 @@
 .cardLink{
     /* width: 25%; */
     /* border: 1px solid black; */
-    width: 46vw;
+    width: 44vw;
     background: white;
     border-radius: 5px;
     transition: all 0.5s;
@@ -49,7 +49,11 @@
         width: 280px !important;
     }
     .contenuA{
-    flex: 3;
+        flex: 3;
+    }
+
+    .contenuA{
+        justify-content: space-between;
     }
 }
 
@@ -60,7 +64,7 @@
 .cardImg img {
     object-fit: cover;
     object-position: top right;
-    width: 46vw;
+    width: 44vw;
     height: 180px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
