@@ -1,13 +1,21 @@
 import './cart.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addPizza, deletePizza, deletePizza2 } from '../redux/panierSlice'
+import { useState } from 'react';
 
 export default function Cart() {
 
     const dispatch = useDispatch()
 
     const cartItems = useSelector(state => state.panier)
+
+    const [coupon, setCoupon] = useState("")
+
     const result = cartItems.reduce((total, currentValue) => total = total + currentValue.price, 0);
+
+    const discount = coupon === "-10%" ? 0.1 : 0;
+    const resultDiscounted = result - result*discount
+
 
     // on va réutiliser le pincipe du reduce pour calculer la quantité de pizzas (et grouper les pizzas par nom) :
     const pizzasGroup = cartItems.reduce((newArray, pizza) => 
@@ -69,14 +77,16 @@ export default function Cart() {
                 </div>
                 {/* Coupon */}
                 <div className="div-coupon">
-                    <input type="text" placeholder="Entrez votre coupon" />
+                    <input className={`${cartItems.length > 0 ? "selection" : ""}`} type="text" placeholder="Entrez votre coupon: -10%"
+                    value={coupon}
+                    onChange={(e) => {setCoupon(e.target.value)}} />
                 </div>
 
                 {/* Total */}
                 <div className="total">
                         <div className="d-flex justify-content-between p-3">
                             <h5 className="p-0 m-0">Total</h5>
-                            <h5 className="p-0 m-0">€{result.toFixed(2)}</h5>
+                            <h5 className="p-0 m-0">€{resultDiscounted.toFixed(2)}</h5>
                         </div>
                 </div>
 
@@ -95,7 +105,7 @@ export default function Cart() {
                         <p className="p-0 m-0">Commander</p>
                     </div>
                     <div className="money">
-                        <p className="p-0 m-0">€{result.toFixed(2)}</p>
+                        <p className="p-0 m-0">€{resultDiscounted.toFixed(2)}</p>
                     </div>
 
                 </button>

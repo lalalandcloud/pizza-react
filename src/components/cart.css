@@ -152,13 +152,19 @@
     justify-content: center;
     align-items: center;
     height: 80px;
-
 }
 
 .div-coupon input {
     border: none;
     outline: none;
-    border: 1px dashed grey;
+    border: 1px dashed rgb(196, 196, 196);
     border-radius: 5px;
-    
+    font-family: "Afacad Flux";
+    opacity: 0;
+    font-size: 14px;
+    width: 200px;
+}
+
+.div-coupon input.selection {
+    opacity: 1;
 }
