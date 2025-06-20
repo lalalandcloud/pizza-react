@@ -1,24 +1,165 @@
 .cart {
-    height: 400px;
-    width: 250px;
-    /* border: 1px solid black; */
-    position: fixed;
-    right: 0;
+    display: none;
 }
+
+
+@media (min-width: 1024px) {
+    .cart {
+        display: flex;
+        height: 440px;
+        width: 18vw;
+        max-width: 250px;
+        /* border: 1px solid black; */
+        position: fixed;
+        /* right: 10px;
+        top: 70px; */
+    }
+}
+
 .panier {
     height: 90%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
 }
 
 .commander {
     background: #70a401;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 21px;
+    height: 50px;
+}
+
+.commander:disabled {
+    background-color: #c6db99;
+}
+
+.commander:disabled .quantite-2 {
+    background-color: #a8c46c;
 }
 
 .cart-bis {
+    background: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 340px;
+}
+
+.cart-content {
     overflow-y: scroll;
     scrollbar-width: none;
+    height: 230px;
     background-color: white;
 }
 
 .total {
     background: #f5f7f9;
+    border-bottom-left-radius: 8px;     
+    border-bottom-right-radius: 8px;
+}
+
+.quantite {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantite-2 {
+    background: #639003;
+    border-radius: 5px;
+    width: 70%;
+}
+
+.money {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-commander {
+    display: flex;
+    justify-content: center;
+    flex: 3;
+    align-items: center;
+}
+
+.total h5 {
+    font-size: 17px;
+}
+
+.pizza-name, .pizza-price {
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+
+.borders { 
+    border-bottom: 1px dashed rgb(196, 196, 196);
+    border-top: 1px dashed rgb(196, 196, 196);
+}
+
+.btn-qt {
+    background: rgb(226, 226, 226);
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.btn-qt:first-of-type p {
+    font-size: 17px;
+    height: 20px;
+}
+
+.btn-qt:nth-of-type(2) p {
+    font-size: 24px;
+}
+
+.btn-qt p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns-change button {
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-family: "Afacad Flux";
+    font-weight: 300;
+}
+
+.btns-change button:first-of-type {
+    color: #c8102e;
+}
+
+@media (min-width: 780px) {
+    .cart h2 {
+        font-size: 25px;
+        font-family: "BlockBE";
+    }
+}
+.div-coupon {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+
+}
+
+.div-coupon input {
+    border: none;
+    outline: none;
+    border: 1px dashed grey;
+    border-radius: 5px;
+    
 }

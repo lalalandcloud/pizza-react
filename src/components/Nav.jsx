@@ -11,7 +11,7 @@ export default function Nav() {
         <>
         <nav>
             <Link to="/" className="d-flex align-items-center"><img src={logo} alt=""/></Link>
-            <div className="d-flex align-items-center gap-3">
+            <div className="d-flex align-items-center gap-3 px-2">
                 <div className="d-flex align-items-center h-100">
                     <button>Se connecter</button>
                 </div>
