@@ -1,19 +1,18 @@
 .content {
-    padding-left: 160px;
-    padding-right: 160px;
     padding-top: 20px;
     padding-bottom: 20px;
-    /* gap: 10px; */
+    display: flex;
+    justify-content: center;
+    width: 98vw;
+    box-sizing: border-box;
 }
 
 .contenuA{
     display: flex;
-    /* width: 80vw;     */
-    flex: 3;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* border: 1px solid red; */
     gap: 26px;
+    
 }
 
 .contenuA h3, .contenuA span {
@@ -32,11 +31,26 @@
 .cardLink{
     /* width: 25%; */
     /* border: 1px solid black; */
-    width: 280px;
+    width: 46vw;
     background: white;
     border-radius: 5px;
     transition: all 0.5s;
     overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+
+    .content {
+    padding-left: 160px;
+    padding-right: 160px;
+    width: 100%;
+    }
+    .cardLink, .cardImg img {
+        width: 280px !important;
+    }
+    .contenuA{
+    flex: 3;
+    }
 }
 
 .cardLink:hover {
@@ -46,7 +60,7 @@
 .cardImg img {
     object-fit: cover;
     object-position: top right;
-    width: 280px;
+    width: 46vw;
     height: 180px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -103,7 +117,7 @@
     overflow: hidden;
     color: rgb(180, 180, 180);
     font-size: 15px;
-    z-index: 0;
+    z-index: -1;
 }
 
 .pizza-texts {
