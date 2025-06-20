@@ -75,10 +75,11 @@ export default function Detail(){
                                 {pizza.ingredients?.map((ingredient, index) => (
 
                                     <div key={index} className='dropdown-item'>
-                                        <img src={`/assets/img/ingredients_decoupes/${ingredient.icon}.png`} alt="" />
+                                        <img className='detail-icon' src={`/assets/img/ingredients_decoupes/${ingredient.icon}.png`} alt="" />
                                         <span>{ingredient.name}</span>
-                                        <div>
-                                            <button 
+                                        <div className='detail-count'>
+                                            <button
+                                                className='detail-btn' 
                                                 onClick={() => {
                                                     const newCounts = [...counts];
                                                     newCounts[index] = Math.max(0, newCounts[index] -1);
@@ -88,6 +89,7 @@ export default function Detail(){
                                             >-</button>
                                             <span>{counts[index]}</span>
                                             <button
+                                                className='detail-btn'
                                                 onClick={() => {
                                                     const newCounts = [...counts];
                                                     newCounts[index] = Math.min(5, newCounts[index] + 1);
