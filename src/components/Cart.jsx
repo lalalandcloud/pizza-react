@@ -1,11 +1,15 @@
 import './cart.css'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
 import { addPizza, deletePizza, deletePizza2 } from '../redux/panierSlice'
-import { useState } from 'react';
+import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+
 
 export default function Cart() {
 
     const dispatch = useDispatch()
+
+    const navigate = useNavigate()
 
     const cartItems = useSelector(state => state.panier)
 
@@ -95,7 +99,8 @@ export default function Cart() {
 
             {/* Bouton Commander */}
             <div>
-                <button disabled={cartItems.length === 0} className="w-100 commander d-flex justify-content-between px-3 py-2">
+                <button disabled={cartItems.length === 0} className="w-100 commander d-flex justify-content-between px-3 py-2"
+                onClick={() => cartItems.length > 0 && navigate("/confirmation")}>
                     <div className="quantite">
                         <div className="quantite-2">
                         <p className="p-0 m-0">{cartItems.length}</p>
@@ -107,7 +112,6 @@ export default function Cart() {
                     <div className="money">
                         <p className="p-0 m-0">€{resultDiscounted.toFixed(2)}</p>
                     </div>
-
                 </button>
             </div>
 

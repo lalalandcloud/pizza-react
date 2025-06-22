@@ -1,0 +1,18 @@
+.confirmation-container {
+  min-height: 100vh;
+  background-color: #f5f7f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation-container h2 {
+  color: #70a401;
+}
+
+.confirmation-container .btn-success {
+  background-color: #70a401;
+  border: none;
+  border-radius: 8px;
+}

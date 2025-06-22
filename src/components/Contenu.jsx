@@ -2,7 +2,7 @@
     import pizzaData from '../../pizzas.json'
     import './contenu.css'
     import Cart from "./Cart"
-    import { useDispatch } from 'react-redux'
+    import { useDispatch, useSelector } from 'react-redux'
     import { addPizza } from '../redux/panierSlice'
     import { useState } from "react"
 
@@ -13,6 +13,8 @@
         const dispatch = useDispatch()
 
         const [hoveredItem, setHoveredItem] = useState(null);
+
+        const cartItems = useSelector(state => state.panier)
 
         return(
             <>
@@ -51,6 +53,19 @@
                     <Cart />
                 </div>
             </div>
+            <div className="mobile-cart-button d-lg-none d-block">
+            {cartItems.length > 0 ? (
+                <Link to="/cart" className="mobile-panier-btn">
+                Voir le Panier
+                </Link>
+            ) : (
+                <button className="mobile-panier-btn" disabled style={{ opacity: 0.5, cursor: 'not-allowed' }}>
+                Voir le Panier
+                </button>
+            )}
+            </div>
+
+
             </>
         )
     }
