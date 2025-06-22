@@ -5,11 +5,11 @@
     padding: 0 15px;
 }
 .detail-glo{
-    width: 70%;
+    width: 90%;
     display: flex;
     /* flex-wrap: wrap; */
     height: 80vh ;
-    margin: auto;
+    /* margin: auto; */
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 
@@ -142,4 +142,8 @@ button{
 .detail-count > span {
     font-weight: 700;
     font-size: 13pt ;
+}
+.detail-cart{
+    min-width: 250px;
+    min-height: 440px;
 }

@@ -110,7 +110,9 @@ export default function Detail(){
                     </div>
 
                 </div>
-                <Cart />
+                <div className='detail-cart'>
+                    <Cart />
+                </div>
             </div> 
             
         </div>    
