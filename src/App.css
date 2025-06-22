@@ -7,6 +7,7 @@ html {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,4 +21,11 @@ p, h1, h2, h3, a, button {
     padding: 0;
     margin: 0;
     font-family: "Afacad Flux";
+}
+
+/* BlockBE font */
+
+@font-face {
+  font-family: "BlockBE";
+  src: url('./assets/font/blockbe-condensed.ttf') format('truetype');
 }

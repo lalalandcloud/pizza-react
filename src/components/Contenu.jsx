@@ -1,50 +1,61 @@
-import { Link } from "react-router-dom"
-import pizzaData from '../../pizzas.json'
-import './contenu.css'
-import Cart from "./Cart"
-import { useDispatch } from 'react-redux'
-import { addPizza } from '../redux/panierSlice'
+    import { Link } from "react-router-dom"
+    import pizzaData from '../../pizzas.json'
+    import './contenu.css'
+    import Cart from "./Cart"
+    import { useDispatch } from 'react-redux'
+    import { addPizza } from '../redux/panierSlice'
+    import { useState } from "react"
+
 
 
 export default function Contenu () {
     // test :
     const dispatch = useDispatch()
 
-    return(
-        <>
-        <div className="d-flex">
-        <div className="contenuA">
-            <div className="contenuTitle">
-                <h3>Pizzas</h3>
-            </div>
-            {pizzaData.map((pizzaData) => (
+    const [hoveredItem, setHoveredItem] = useState(null);
+
+        return(
+            <>
+            <div className="d-flex content">
+                <div className="contenuA">
+                    {pizzaData.map((pizzaData) => (
+                        // <div 
+                        //     key={pizzaData.name} 
+                        //     className="cardLink"
+                        //     onMouseOver={() => setHoveredItem(pizzaData.name)} onMouseOut={() => setHoveredItem(null)}
+                        // >
+                        <Link
+                            key={pizzaData.name}
+                            to={`/pizza/${pizzaData.name}`}
+                            className="cardLink"
+                            onMouseOver={() => setHoveredItem(pizzaData.name)}
+                            onMouseOut={() => setHoveredItem(null)}
+                            style={{ textDecoration: 'none', color: 'inherit' }} // pour garder le style
+                        >
+                            {/* <div className="cardOne"> */}
+                            <div className="cardImg">
+                                <img src={pizzaData.image} alt="" />
+                            </div>
+                            <div className={`pizza-texts ${hoveredItem === pizzaData.name ? "focus" : ""}`}>
+                                <div className="p-2">
+                                    <h3 className="m-0">{pizzaData.name}</h3>
+                                    <p className={`pizza-desc ${hoveredItem === pizzaData.name ? "focus" : ""}`}>{pizzaData.description}</p>
+                                </div>
+                            </div>
+                            <div className="cardEnd d-flex justify-content-end pe-3 pb-2">
+                                <p className="p-2 m-0">à partir de <span>€{pizzaData.price}</span></p>
+                                <div className="d-flex align-items-center">
+                                    <div className="btnAdd d-flex align-items-center justify-content-center" onClick={() => dispatch(addPizza(pizzaData))} role="button">+</div>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 
-                <Link 
-                    to={`/pizza/${pizzaData.name}`}
-                    key={pizzaData.name} 
-                    className="cardLink"
-                >     
-
-                    <div className="cardImg">
-                        <img src={pizzaData.image} alt="" />
-                    </div>
-                    <div>
-                        <h3>{pizzaData.name}</h3>
-                        <p>{pizzaData.description}</p>
-                    </div>
-                    <div className="cardEnd">
-                        <p>à partir de <span>€{pizzaData.price}</span> </p>
-                        <button className="btnAdd" onClick={() => dispatch(addPizza(pizzaData))}>+</button>
-                        {/* <button className="btnAdd">+</button> */}
-                    </div>
-
-                </Link>
-
-            ))}
-        
-        </div>
-        <Cart />
-        </div>
-        </>
-    )
-}
+                </div>
+                <div className="div-cart">
+                    <Cart />
+                </div>
+            </div>
+            </>
+        )
+    }

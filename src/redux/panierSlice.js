@@ -12,9 +12,12 @@ const panierSlice = createSlice({
             if (index >= 0) {
                 state.splice(index, 1)
             }
+        },
+        deletePizza2: (state, action) => {
+            return state.filter(i => i.name !== action.payload)
         }
     }
 })
 
 export default panierSlice.reducer;
-export const { addPizza, deletePizza } = panierSlice.actions;
+export const { addPizza, deletePizza, deletePizza2 } = panierSlice.actions;
