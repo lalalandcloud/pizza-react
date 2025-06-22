@@ -23,7 +23,7 @@
     width: 90%;
     display: flex;
     /* flex-wrap: wrap; */
-    height: 80vh ;
+    /* height: 80vh ; */
     margin: auto;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
@@ -68,7 +68,7 @@
     position: relative;
     display: inline-block;
     width: 99%;
-    height: 50%;
+    height: 60%;
     border: 2px #f5f7f9 solid;
     border-radius: 5px;
     padding: 10px;
@@ -161,4 +161,24 @@ button{
 .detail-cart{
     min-width: 250px;
     min-height: 440px;
+}
+@media (max-width: 1200px) {
+    .detail-glo{
+        display: block;
+        height: 100%;
+    }
+    .detail-img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .detail-img > img{
+        border-radius: 10px;
+        width: 100%;
+
+    }
+    .detail-text{
+        width: 100%;
+        border-radius: 10px;
+
+    }
 }
