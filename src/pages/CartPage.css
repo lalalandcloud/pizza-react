@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "BlockBE";
+  src: url('./assets/font/blockbe-condensed.ttf') format('truetype');
+}
+
+.cart-page-title {
+        font-size: 25px;
+        font-family: "BlockBE" !important;
+}
