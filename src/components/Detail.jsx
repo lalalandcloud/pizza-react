@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import Cart from './Cart'
 import { addPizza } from '../redux/panierSlice'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Detail(){
@@ -49,7 +51,7 @@ export default function Detail(){
                 to='/'
                 className='link-back'
             >
-                <p>Retour</p>
+                <p> <span><FontAwesomeIcon icon={faChevronLeft}/></span> Retour</p>
             </Link>
            <div className='detail-glo'>
                 <div className='detail-img'>

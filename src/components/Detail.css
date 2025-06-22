@@ -4,6 +4,21 @@
     margin: 0 auto 15px;
     padding: 0 15px;
 }
+.detail-a > a{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    color: #6d6a6b;
+    text-decoration: none;
+    font-size: 17pt;
+}
+.detail-a > a > p{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.detail-a span{
+    font-size: 14pt;
+}
 .detail-glo{
     width: 90%;
     display: flex;
