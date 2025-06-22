@@ -82,13 +82,14 @@
 }
 
 .dropdown-content {
-    position: absolute;
-    left: 0;
+    /* position: absolute;
+    left: 0; */
     background-color: white;
     min-width: 160px;
-    z-index: 1;
+    /* z-index: 1; */
     border-radius: 4px;
     width: 90%;
+    transition: 300ms ease-in-out;
     margin: 10px;
 }
 
